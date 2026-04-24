@@ -1,0 +1,196 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Group One Realty — Design System
+ * Brand: Navy Blue + Gold + White, premium luxury real estate
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --shadow-luxury: 0 20px 60px -20px color-mix(in oklab, var(--navy) 35%, transparent);
+  --shadow-gold: 0 10px 40px -10px color-mix(in oklab, var(--gold) 40%, transparent);
+  --shadow-card: 0 4px 24px -8px color-mix(in oklab, var(--navy) 15%, transparent);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.04 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 260);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 260);
+
+  /* Primary = Navy */
+  --primary: oklch(0.24 0.07 260);
+  --primary-foreground: oklch(0.98 0.005 260);
+
+  /* Navy explicit */
+  --navy: oklch(0.24 0.07 260);
+  --navy-foreground: oklch(0.98 0.005 260);
+
+  /* Gold accent */
+  --gold: oklch(0.78 0.13 80);
+  --gold-foreground: oklch(0.20 0.04 260);
+
+  --secondary: oklch(0.96 0.01 250);
+  --secondary-foreground: oklch(0.24 0.07 260);
+
+  --muted: oklch(0.97 0.008 250);
+  --muted-foreground: oklch(0.50 0.03 255);
+
+  --accent: oklch(0.78 0.13 80);
+  --accent-foreground: oklch(0.20 0.04 260);
+
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --success: oklch(0.65 0.16 145);
+  --success-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.92 0.012 255);
+  --input: oklch(0.92 0.012 255);
+  --ring: oklch(0.78 0.13 80);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.18 0.06 260 / 0.92), oklch(0.24 0.07 260 / 0.75) 60%, oklch(0.30 0.08 260 / 0.50));
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 85), oklch(0.72 0.14 70));
+  --gradient-navy: linear-gradient(135deg, oklch(0.20 0.06 260), oklch(0.30 0.08 265));
+}
+
+.dark {
+  --background: oklch(0.13 0.03 260);
+  --foreground: oklch(0.98 0.005 260);
+
+  --card: oklch(0.18 0.04 260);
+  --card-foreground: oklch(0.98 0.005 260);
+
+  --popover: oklch(0.18 0.04 260);
+  --popover-foreground: oklch(0.98 0.005 260);
+
+  --primary: oklch(0.78 0.13 80);
+  --primary-foreground: oklch(0.18 0.04 260);
+
+  --navy: oklch(0.18 0.04 260);
+  --navy-foreground: oklch(0.98 0.005 260);
+
+  --gold: oklch(0.82 0.14 80);
+  --gold-foreground: oklch(0.15 0.03 260);
+
+  --secondary: oklch(0.24 0.05 260);
+  --secondary-foreground: oklch(0.98 0.005 260);
+
+  --muted: oklch(0.22 0.04 260);
+  --muted-foreground: oklch(0.68 0.03 255);
+
+  --accent: oklch(0.78 0.13 80);
+  --accent-foreground: oklch(0.18 0.04 260);
+
+  --destructive: oklch(0.65 0.20 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --success: oklch(0.70 0.16 145);
+  --success-foreground: oklch(0.13 0.03 260);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.78 0.13 80);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-navy { background: var(--gradient-navy); }
+  .shadow-luxury { box-shadow: var(--shadow-luxury); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .glass {
+    background: color-mix(in oklab, var(--background) 70%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  }
+  .glass-dark {
+    background: color-mix(in oklab, oklch(0.15 0.04 260) 60%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(1 0 0 / 0.12);
+  }
+  .container-px { padding-left: 1rem; padding-right: 1rem; }
+  @media (min-width: 768px) { .container-px { padding-left: 2rem; padding-right: 2rem; } }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

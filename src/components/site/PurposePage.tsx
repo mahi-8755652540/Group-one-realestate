@@ -50,7 +50,9 @@ export function PurposePage({ purpose, eyebrow, title, subtitle, bullets, ctaLab
             <span className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-gold">
               {eyebrow}
             </span>
-            <h1 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-[1.05]">{title}</h1>
+            <h1 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-[1.05]">
+              {title}
+            </h1>
             <p className="mt-5 text-white/80 max-w-2xl text-lg leading-relaxed">{subtitle}</p>
 
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/85">
@@ -75,7 +77,9 @@ export function PurposePage({ purpose, eyebrow, title, subtitle, bullets, ctaLab
                 >
                   <option value="">All Cities</option>
                   {allCities.map((c) => (
-                    <option key={c} value={c}>{c}</option>
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
                   ))}
                 </select>
               </label>
@@ -107,7 +111,9 @@ export function PurposePage({ purpose, eyebrow, title, subtitle, bullets, ctaLab
 
           {/* City quick links */}
           <div className="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10">
-            <div className="text-gold text-xs font-semibold uppercase tracking-widest">Popular Cities</div>
+            <div className="text-gold text-xs font-semibold uppercase tracking-widest">
+              Popular Cities
+            </div>
             <div className="mt-4 grid grid-cols-2 gap-3">
               {allCities.map((c) => (
                 <Link
@@ -132,9 +138,12 @@ export function PurposePage({ purpose, eyebrow, title, subtitle, bullets, ctaLab
         <div className="mx-auto max-w-7xl container-px">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
             <div>
-              <span className="text-gold font-semibold text-sm uppercase tracking-widest">{purpose} Properties</span>
+              <span className="text-gold font-semibold text-sm uppercase tracking-widest">
+                {purpose} Properties
+              </span>
               <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold">
-                {list.length} {purpose === "Rent" ? "rental" : purpose.toLowerCase()} {list.length === 1 ? "property" : "properties"} available
+                {list.length} {purpose === "Rent" ? "rental" : purpose.toLowerCase()}{" "}
+                {list.length === 1 ? "property" : "properties"} available
               </h2>
             </div>
             <Link
@@ -160,7 +169,9 @@ export function PurposePage({ purpose, eyebrow, title, subtitle, bullets, ctaLab
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {list.map((p) => <PropertyCard key={p.id} p={p} />)}
+              {list.map((p) => (
+                <PropertyCard key={p.id} p={p} />
+              ))}
             </div>
           )}
         </div>
@@ -170,18 +181,23 @@ export function PurposePage({ purpose, eyebrow, title, subtitle, bullets, ctaLab
       <section className="py-16 bg-secondary">
         <div className="mx-auto max-w-7xl container-px grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="text-gold font-semibold text-sm uppercase tracking-widest">Free Consultation</span>
+            <span className="text-gold font-semibold text-sm uppercase tracking-widest">
+              Free Consultation
+            </span>
             <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold">{ctaLabel}</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-lg">
               Share your requirement — our Delhi NCR experts will call you back within 30 minutes
-              with shortlisted options, transparent pricing, and zero brokerage deals where applicable.
+              with shortlisted options, transparent pricing, and zero brokerage deals where
+              applicable.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild variant="gold" size="lg">
                 <a href="tel:9654440099">📞 Call 96544 40099</a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="https://wa.me/919654440099" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+                <a href="https://wa.me/919654440099" target="_blank" rel="noopener noreferrer">
+                  💬 WhatsApp
+                </a>
               </Button>
             </div>
           </div>

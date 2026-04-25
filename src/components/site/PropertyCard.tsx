@@ -54,12 +54,21 @@ export function PropertyCard({ p }: { p: Property }) {
         </p>
         <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground border-t border-border pt-4">
           {p.bedrooms != null && (
-            <span className="flex items-center gap-1.5"><Bed className="h-4 w-4 text-navy" />{p.bedrooms} Bed</span>
+            <span className="flex items-center gap-1.5">
+              <Bed className="h-4 w-4 text-navy" />
+              {p.bedrooms} Bed
+            </span>
           )}
           {p.bathrooms != null && (
-            <span className="flex items-center gap-1.5"><Bath className="h-4 w-4 text-navy" />{p.bathrooms} Bath</span>
+            <span className="flex items-center gap-1.5">
+              <Bath className="h-4 w-4 text-navy" />
+              {p.bathrooms} Bath
+            </span>
           )}
-          <span className="flex items-center gap-1.5 ml-auto"><Maximize className="h-4 w-4 text-navy" />{p.area} sqft</span>
+          <span className="flex items-center gap-1.5 ml-auto">
+            <Maximize className="h-4 w-4 text-navy" />
+            {p.area} sqft
+          </span>
         </div>
       </div>
     </Link>

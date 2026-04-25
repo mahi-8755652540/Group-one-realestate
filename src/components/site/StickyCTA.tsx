@@ -1,7 +1,8 @@
 import { Phone, MessageCircle } from "lucide-react";
 
 export function StickyCTA() {
-  const wa = "https://wa.me/919654440099?text=Hi%20Group%20One%20Realty%2C%20I%27m%20interested%20in%20a%20property.";
+  const wa =
+    "https://wa.me/919654440099?text=Hi%20Group%20One%20Realty%2C%20I%27m%20interested%20in%20a%20property.";
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
       <a

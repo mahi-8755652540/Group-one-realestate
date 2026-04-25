@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home, MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Home, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -15,29 +15,49 @@ export function Footer() {
             </div>
           </Link>
           <p className="text-sm text-white/70 max-w-md leading-relaxed">
-            Your trusted partner for buying, selling, renting, and investing in
-            premium Delhi NCR real estate. RERA-approved projects, verified
-            listings, transparent guidance.
+            Your trusted partner for buying, selling, renting, and investing in premium Delhi NCR
+            real estate. RERA-approved projects, verified listings, transparent guidance.
           </p>
-          <div className="flex gap-3 mt-6">
-            {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="h-9 w-9 grid place-items-center rounded-full border border-white/15 hover:bg-gold hover:text-gold-foreground hover:border-gold transition-colors">
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>
           <h4 className="font-display text-lg mb-4 text-gold">Quick Links</h4>
           <ul className="space-y-2 text-sm text-white/70">
-            <li><Link to="/" className="hover:text-gold">Home</Link></li>
-            <li><Link to="/buy" className="hover:text-gold">Buy Property</Link></li>
-            <li><Link to="/rent" className="hover:text-gold">Rent Property</Link></li>
-            <li><Link to="/resale" className="hover:text-gold">Resale Property</Link></li>
-            <li><Link to="/properties" className="hover:text-gold">All Listings</Link></li>
-            <li><Link to="/about" className="hover:text-gold">About Us</Link></li>
-            <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
+            <li>
+              <Link to="/" className="hover:text-gold">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/buy" className="hover:text-gold">
+                Buy Property
+              </Link>
+            </li>
+            <li>
+              <Link to="/rent" className="hover:text-gold">
+                Rent Property
+              </Link>
+            </li>
+            <li>
+              <Link to="/resale" className="hover:text-gold">
+                Resale Property
+              </Link>
+            </li>
+            <li>
+              <Link to="/properties" className="hover:text-gold">
+                All Listings
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-gold">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-gold">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -50,11 +70,15 @@ export function Footer() {
             </li>
             <li className="flex gap-2">
               <Phone className="h-4 w-4 mt-0.5 text-gold shrink-0" />
-              <a href="tel:9654440099" className="hover:text-gold">+91 96544 40099</a>
+              <a href="tel:9654440099" className="hover:text-gold">
+                +91 96544 40099
+              </a>
             </li>
             <li className="flex gap-2">
               <Mail className="h-4 w-4 mt-0.5 text-gold shrink-0" />
-              <a href="mailto:info@grouponerealty.in" className="hover:text-gold">info@grouponerealty.in</a>
+              <a href="mailto:info@grouponerealty.in" className="hover:text-gold">
+                info@grouponerealty.in
+              </a>
             </li>
           </ul>
         </div>
@@ -62,10 +86,16 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl container-px py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
           <div>© {new Date().getFullYear()} Group One Realty. All rights reserved.</div>
-          <div className="flex gap-5">
-            <a href="#" className="hover:text-gold">Privacy Policy</a>
-            <a href="#" className="hover:text-gold">Terms & Conditions</a>
-            <a href="#" className="hover:text-gold">Disclaimer</a>
+          <div className="flex flex-wrap gap-5">
+            <Link to="/contact" className="hover:text-gold">
+              Privacy Policy
+            </Link>
+            <Link to="/contact" className="hover:text-gold">
+              Terms & Conditions
+            </Link>
+            <Link to="/contact" className="hover:text-gold">
+              Disclaimer
+            </Link>
           </div>
         </div>
       </div>

@@ -116,31 +116,29 @@ function ListingsPage() {
             <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               I want to
             </label>
-            <div className="mt-1.5 grid grid-cols-3 gap-1.5">
+            <div className="mt-1.5 grid grid-cols-4 gap-1.5">
               {[
                 { v: "", l: "All" },
                 { v: "Buy", l: "Buy" },
                 { v: "Rent", l: "Rent" },
                 { v: "Resale", l: "Resale" },
-              ]
-                .slice(1)
-                .map((o) => (
-                  <button
-                    key={o.v}
-                    type="button"
-                    onClick={() => {
-                      setPurpose(purpose === o.v ? "" : o.v);
-                      setBudget("");
-                    }}
-                    className={`rounded-lg px-2 py-2 text-xs font-semibold border transition-colors ${
-                      purpose === o.v
-                        ? "bg-navy text-navy-foreground border-navy"
-                        : "bg-background text-foreground border-input hover:border-gold"
-                    }`}
-                  >
-                    {o.l}
-                  </button>
-                ))}
+              ].map((o) => (
+                <button
+                  key={o.v || "all"}
+                  type="button"
+                  onClick={() => {
+                    setPurpose(o.v);
+                    setBudget("");
+                  }}
+                  className={`rounded-lg px-2 py-2 text-xs font-semibold border transition-colors ${
+                    purpose === o.v
+                      ? "bg-navy text-navy-foreground border-navy"
+                      : "bg-background text-foreground border-input hover:border-gold"
+                  }`}
+                >
+                  {o.l}
+                </button>
+              ))}
             </div>
           </div>
           <FilterSelect

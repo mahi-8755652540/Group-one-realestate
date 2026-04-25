@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-export function InquiryForm({ propertyTitle, compact = false }: { propertyTitle?: string; compact?: boolean }) {
+export function InquiryForm({
+  propertyTitle,
+  compact = false,
+}: {
+  propertyTitle?: string;
+  compact?: boolean;
+}) {
   const [loading, setLoading] = useState(false);
 
   const fieldClassName = "bg-white text-black uppercase placeholder:normal-case";
@@ -13,8 +19,10 @@ export function InquiryForm({ propertyTitle, compact = false }: { propertyTitle?
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const form = e.currentTarget;
-    const name = String(data.get("name") || "").trim().toUpperCase();
-    const phone = String(data.get("phone") || "").trim();
+    const name = String(data.get("name") || "")
+      .trim()
+      .toUpperCase();
+    const phone = String(data.get("phone") || "").replace(/\D/g, "");
     const email = String(data.get("email") || "").trim();
     const message = String(data.get("message") || "").trim();
     if (name.length < 2 || !/^[6-9]\d{9}$/.test(phone)) {
@@ -48,6 +56,7 @@ export function InquiryForm({ propertyTitle, compact = false }: { propertyTitle?
     <form onSubmit={onSubmit} className={compact ? "space-y-3" : "space-y-4"}>
       <Input
         name="name"
+        autoComplete="name"
         placeholder="Your Name *"
         required
         minLength={2}
@@ -57,15 +66,18 @@ export function InquiryForm({ propertyTitle, compact = false }: { propertyTitle?
       <Input
         name="phone"
         type="tel"
+        inputMode="numeric"
+        autoComplete="tel"
         placeholder="Mobile Number *"
         required
-        pattern="[6-9][0-9]{9}"
-        maxLength={10}
+        pattern="[0-9 ()+-]*"
+        maxLength={16}
         className="bg-white text-black placeholder:normal-case"
       />
       <Input
         name="email"
         type="email"
+        autoComplete="email"
         placeholder="Email (optional)"
         maxLength={120}
         className="bg-white text-black placeholder:normal-case"
@@ -73,7 +85,11 @@ export function InquiryForm({ propertyTitle, compact = false }: { propertyTitle?
       {!compact && (
         <Textarea
           name="message"
-          placeholder={propertyTitle ? `I'm interested in: ${propertyTitle}` : "Tell us what you're looking for..."}
+          placeholder={
+            propertyTitle
+              ? `I'm interested in: ${propertyTitle}`
+              : "Tell us what you're looking for..."
+          }
           rows={3}
           maxLength={500}
           className={fieldClassName}

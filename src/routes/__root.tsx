@@ -34,11 +34,23 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Group One Realty — Trusted Delhi NCR Real Estate Partner" },
-      { name: "description", content: "Buy, sell, rent or invest in premium Delhi NCR properties. RERA-approved projects, verified listings, zero brokerage deals across Gurgaon, Noida, Delhi, Faridabad & Ghaziabad." },
+      {
+        name: "description",
+        content:
+          "Buy, sell, rent or invest in premium Delhi NCR properties. RERA-approved projects, verified listings, zero brokerage deals across Gurgaon, Noida, Delhi, Faridabad & Ghaziabad.",
+      },
       { name: "author", content: "Group One Realty" },
-      { name: "keywords", content: "Delhi NCR real estate, property in Gurgaon, flats in Noida, plots in Greater Noida, builder floor Delhi, RERA approved, zero brokerage" },
+      {
+        name: "keywords",
+        content:
+          "Delhi NCR real estate, property in Gurgaon, flats in Noida, plots in Greater Noida, builder floor Delhi, RERA approved, zero brokerage",
+      },
       { property: "og:title", content: "Group One Realty — Trusted Delhi NCR Real Estate Partner" },
-      { property: "og:description", content: "Premium properties across Delhi NCR. Verified listings, RERA approved, transparent guidance." },
+      {
+        property: "og:description",
+        content:
+          "Premium properties across Delhi NCR. Verified listings, RERA approved, transparent guidance.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -46,7 +58,10 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

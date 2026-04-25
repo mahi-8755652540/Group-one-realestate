@@ -25,7 +25,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "glass shadow-card py-3" : "bg-transparent py-5"
+        scrolled ? "glass shadow-card py-3" : "bg-transparent py-5",
       )}
     >
       <div className="mx-auto max-w-7xl container-px flex items-center justify-between">
@@ -34,10 +34,20 @@ export function Header() {
             <Home className="h-5 w-5 text-gold" />
           </div>
           <div className="leading-tight">
-            <div className={cn("font-display text-lg font-bold", scrolled ? "text-navy" : "text-white")}>
+            <div
+              className={cn(
+                "font-display text-lg font-bold",
+                scrolled ? "text-navy" : "text-white",
+              )}
+            >
               Group One <span className="text-gradient-gold">Realty</span>
             </div>
-            <div className={cn("text-[10px] uppercase tracking-widest", scrolled ? "text-muted-foreground" : "text-white/70")}>
+            <div
+              className={cn(
+                "text-[10px] uppercase tracking-widest",
+                scrolled ? "text-muted-foreground" : "text-white/70",
+              )}
+            >
               Delhi NCR Experts
             </div>
           </div>
@@ -50,7 +60,7 @@ export function Header() {
               to={l.to}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-gold",
-                scrolled ? "text-foreground" : "text-white"
+                scrolled ? "text-foreground" : "text-white",
               )}
               activeProps={{ className: "text-gold" }}
               activeOptions={{ exact: l.to === "/" }}

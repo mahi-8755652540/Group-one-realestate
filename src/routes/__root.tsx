@@ -1,10 +1,8 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { StickyCTA } from "@/components/site/StickyCTA";
 import { Toaster } from "@/components/ui/sonner";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -29,59 +27,9 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Group One Realty — Trusted Delhi NCR Real Estate Partner" },
-      {
-        name: "description",
-        content:
-          "Buy, sell, rent or invest in premium Delhi NCR properties. RERA-approved projects, verified listings, zero brokerage deals across Gurgaon, Noida, Delhi, Faridabad & Ghaziabad.",
-      },
-      { name: "author", content: "Group One Realty" },
-      {
-        name: "keywords",
-        content:
-          "Delhi NCR real estate, property in Gurgaon, flats in Noida, plots in Greater Noida, builder floor Delhi, RERA approved, zero brokerage",
-      },
-      { property: "og:title", content: "Group One Realty — Trusted Delhi NCR Real Estate Partner" },
-      {
-        property: "og:description",
-        content:
-          "Premium properties across Delhi NCR. Verified listings, RERA approved, transparent guidance.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return (
@@ -96,3 +44,4 @@ function RootComponent() {
     </>
   );
 }
+

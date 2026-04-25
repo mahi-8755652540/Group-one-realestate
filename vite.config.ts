@@ -4,6 +4,7 @@ import path from "path";
 
 // Standard SPA config for Vercel
 export default defineConfig({
+  base: "/Group-one-realestate/",
   plugins: [react()],
   resolve: {
     alias: {
